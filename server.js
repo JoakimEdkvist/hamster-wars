@@ -20,12 +20,6 @@ const staticFolder = path.join(__dirname, 'public')
 // CORS öppnar vårt projekt så det kan användas från andra domäner
 app.use(cors())
 app.use(express.json())
-// app.use(
-//   express.urlencoded({
-//     extended: true
-//   })
-// )
-
 // Parse request body
 app.use(express.urlencoded({ extended: true }))
 

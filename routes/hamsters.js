@@ -33,7 +33,7 @@ router.get('/cutest', async (req, res) => {
     return score.push({ ...h, sum: sum })
   })
 
-  //iterate and check highest sum
+  //iterate and check which hamster/hamsters have biggest sum
   let biggestVal = Math.max.apply(
     Math,
     score.map((o) => o.sum)
@@ -111,6 +111,7 @@ router.put('/:id', async (req, res) => {
   let newData = req.body
   //hitta document som ska uppdateras
   const oldDocRef = doc(colRef, oldDocId)
+  // om inte id kan hittas så ändras oldDocId variabeln till 'id-does-does-not-exist'
 
   if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
     console.log('Object missing')
